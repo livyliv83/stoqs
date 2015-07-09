@@ -17,6 +17,8 @@ The good news is that Unix system administration skills are no longer required a
 
 4. Clone your fork to a working directory on your development system using the SSH version of the clone URL:
 
+Note: Be sure to delete the "<" and ">" symbols before running the command.
+
         git clone git@github.com:<your_github_id>/stoqs.git stoqsgit
 
    (If you built a development system from the Vagrantfile you may want to first remove the ~/dev/stoqsgit directory created during that process.)
