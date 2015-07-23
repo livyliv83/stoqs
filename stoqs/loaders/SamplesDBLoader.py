@@ -125,9 +125,9 @@ class ROVCTD_Loader(Base_Loader):
         
         @param activityName: A string describing this activity
         @param platformName: A string that is the name of the platform. If that name for a Platform exists in the DB, it will be used.
-        @param platformColor: An RGB hex string represnting the color of the platform. 
+        @param platformColor: An RGB hex string represnting the color of the platform. #Not needed?
         @param diveNumber: The dive number from the Expedition database
-        @param dbAlias: The name of the database alias as defined in settings.py
+        @param dbAlias: The name of the database alias as defined in settings.py 
         @param campaignName: A string describing the Campaign in which this activity belongs, If that name for a Campaign exists in the DB, it will be used.
         @param campaignDescription: A string expanding on the campaignName. It should be a short phrase expressing the where and why of a campaign.
         @param activitytypeName: A string such as 'mooring deployment' or 'AUV mission' describing type of activity, If that name for a ActivityType exists in the DB, it will be used.
@@ -137,6 +137,9 @@ class ROVCTD_Loader(Base_Loader):
         @param dataStartDatetime: A Python datetime.dateime object specifying the start date time of data to append to an existing Activity
         @param auxCoords: a dictionary of coordinate standard_names (time, latitude, longitude, depth) pointing to exact names of those coordinates. Used for variables missing the coordinates attribute.
         @param stride: The stride/step size used to retrieve data from the constructed url.
+	@parem collectorName:
+	@parem chiefScientist:
+	@parem sampleID:
 
         '''
 
