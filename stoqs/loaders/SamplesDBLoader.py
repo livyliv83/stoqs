@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 __author__ = "Mike McCann"
-__copyright__ = "Copyright 2014, MBARI"
+__copyright__ = "Copyright 2015, MBARI"
 __license__ = "GPL"
 __maintainer__ = "Mike McCann"
 __email__ = "mccann at mbari.org"
@@ -10,11 +10,20 @@ __doc__ = '''
 
 The ROVCTDloader module contains classes for reading data from MBARI's internal
 rovtcd web service which returns data by ROV name and dive number from the EXPD
-database which holds data from all of MBARI's ROV dives staring in 1989. The data
-are read from this service and then loaded into STOQS database(s).
+database which holds data from all of MBARI's ROV dives staring in 1989. The
+data are read from this service and then loaded into STOQS database(s).
 
 Mike McCann
 MBARI 24 October 2014
+
+SampleDBLoader.py is written with the expectation of eventually replacing the 
+ASP file for the MBARI Samples Database. The Sample Database is composed of
+both biological and geological samples from cruises carried out by MBARI. Most
+of the samples were collected using one of the ROVs owned by MBARI either at
+the present or past.
+
+Olivia Arredondo
+MBARI 22 July 2015
 
 @var __date__: Date of last svn commit
 @undocumented: __doc__ parser
@@ -82,8 +91,9 @@ class DiveInfoServletException(Exception):
 
 class ROVCTD_Loader(Base_Loader):
     '''
-    Loader for ROVCTTD data.  Use all of the well-tested methods used in DAPloaders.py; add
-    our own generator for rows of data from the web service for rovtcd data.
+    Loader for ROVCTTD data.  Use all of the well-tested methods used in
+    DAPloaders.py; add our own generator for rows of data from the web service
+    for rovtcd data.
     '''
     include_names = ['p', 't', 's', 'o2', 'o2alt', 'light', 'beac', 'analog1', 'analog2', 'analog3', 'analog4']
     vDict = {   'p': 'p',
